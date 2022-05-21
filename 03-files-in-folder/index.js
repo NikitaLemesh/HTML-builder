@@ -9,7 +9,7 @@ const path = require('path');
       if(file.isFile()) {
         const fileName = file.name.split('.')[0];
         const fileExtention = file.name.split('.')[1];
-        await stat(path.join(__dirname, `secret-folder/${file.name}`), (error, stats) => {
+        stat(path.join(__dirname, `secret-folder/${file.name}`), (error, stats) => {
           if(error) {
             console.log(error);
           } else {
