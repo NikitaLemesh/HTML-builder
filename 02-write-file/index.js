@@ -7,7 +7,7 @@ const writable = createWriteStream(filePath);
 
 stdin.on('data', chunk => {
   if(chunk.toString().trim() === 'exit') {
-    stdout.write('ggwp');
+    stdout.write('Good luck');
     process.exit();
   } else {
     stdout.write('write some text\n');
