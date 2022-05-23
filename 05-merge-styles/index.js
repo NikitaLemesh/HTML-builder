@@ -16,7 +16,6 @@ const path = require('path');
         let chunk = await fs.readFile(way, 'utf-8');
         chunk = chunk + '\n';
         text += chunk;
-        console.log(chunk);
       }
     }
     await fs.writeFile(filePath, text);
