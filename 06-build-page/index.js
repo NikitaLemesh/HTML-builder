@@ -59,9 +59,11 @@ copyFolder(path.join(__dirname, 'assets'), path.join( __dirname + '\\project-dis
   try {
     for (const tag of tags) {
       const fileExtention = tag.replace(/[{}]/g, '') +'.html';
-      const file2 = await fs.readFile(path.join(__dirname, 'components', fileExtention), 'utf-8');
-      template = template.replace(tag, file2);
-      content = template;
+      if (fileExtention.split('.')[1] === 'html') {
+        const file2 = await fs.readFile(path.join(__dirname, 'components', fileExtention), 'utf-8');
+        template = template.replace(tag, file2);
+        content = template;
+      }
     }
     await fs.writeFile(filePath, content);
   } catch(err) {
